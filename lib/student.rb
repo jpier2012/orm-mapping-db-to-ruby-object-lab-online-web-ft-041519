@@ -3,7 +3,7 @@ class Student
 
   def self.new_from_db(row)
     # create a new Student object given a row from the database
-    new_song = song.new.tap do |s|
+    new_student = student.new.tap do |s|
       s.id = row[0]
       s.name = row[1]
       s.grade = row[2]
