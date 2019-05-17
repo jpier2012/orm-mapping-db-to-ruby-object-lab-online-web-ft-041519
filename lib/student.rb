@@ -29,7 +29,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE students.name = \'#{name}\'
+      WHERE students.name = ?
     SQL
 
     DB[:conn].execute(sql, name).map do |row|
