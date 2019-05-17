@@ -30,7 +30,7 @@ class Student
       WHERE students.name = \'#{name}\'
     SQL
 
-    DB[:conn].execute(sql)
+    if !DB[:conn].execute(sql).empty?
   end
 
   def save
