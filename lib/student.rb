@@ -32,7 +32,9 @@ class Student
       WHERE students.name = \'#{name}\'
     SQL
 
-    if !DB[:conn].execute(sql).empty?
+    DB[:conn].execute(sql).map do |row|
+      self.new_from_db(row)
+    end
   end
 
   def save
